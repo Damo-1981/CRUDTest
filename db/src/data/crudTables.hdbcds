@@ -1,0 +1,24 @@
+namespace CRUDTest.db.data;
+
+context crudTables {
+	entity Rates {
+	    key WBS_ELEMENT     : String(30);
+	    key CONSULTANT_ID   : Double;
+	        CONSULTANT_NAME : String(100);
+	        DAY_RATE        : Decimal(8, 2);
+	        COST_RATE       : Decimal(8, 2);
+	        VALID_FROM      : LocalDate;
+	        VALID_TO        : String(10);
+	};
+	
+	entity Rates_Temp {
+	    key WBS_ELEMENT     : String(30);
+	    key CONSULTANT_ID   : Double;
+	    key SEQUENCE_NO     : Double;
+	        CONSULTANT_NAME : String(100);
+	        DAY_RATE        : Decimal(8, 2);
+	        COST_RATE       : Decimal(8, 2);
+	        VALID_FROM      : LocalDate;
+	        VALID_TO        : String(10);
+	};
+};
