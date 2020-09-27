@@ -1,0 +1,36 @@
+{
+    "format_version": 1,
+    "imports": [{
+        "target_table": "CRUDTest.db.data::crudTables.Rates",
+        "source_data": {
+            "data_type": "CSV",
+            "file_name": "CRUDTest.db.data::rates.csv",
+            "has_header": true,
+            "dialect": "HANA",
+			"type_config": {
+				"delimiter": ","
+			}
+        },
+        "import_settings": {
+        	"include_filter" : [ ],            
+            "import_columns": [
+                "WBS_ELEMENT",
+				"CONSULTANT_ID",
+				"CONSULTANT_NAME",
+				"DAY_RATE",
+				"COST_RATE",
+				"VALID_FROM",
+				"VALID_TO"
+            ]
+        },
+        "column_mappings": {
+        	"WBS_ELEMENT": 1,
+			"CONSULTANT_ID": 2,
+			"CONSULTANT_NAME": 3,
+			"DAY_RATE": 4,
+			"COST_RATE": 5,
+			"VALID_FROM": 6,
+			"VALID_TO": 7
+        }
+    }]
+}
