@@ -8,7 +8,7 @@ context crudTables {
 	        DAY_RATE        : Decimal(8, 2);
 	        COST_RATE       : Decimal(8, 2);
 	        VALID_FROM      : LocalDate;
-	        VALID_TO        : String(10);
+	        VALID_TO        : LocalDate;
 	};
 	
 	entity Rates_Temp {
@@ -19,6 +19,6 @@ context crudTables {
 	        DAY_RATE        : Decimal(8, 2);
 	        COST_RATE       : Decimal(8, 2);
 	        VALID_FROM      : LocalDate;
-	        VALID_TO        : String(10);
+	        VALID_TO        : LocalDate;
 	};
 };

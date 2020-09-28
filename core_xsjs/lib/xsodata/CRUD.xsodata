@@ -1,3 +1,6 @@
 service namespace "CRUDTest.lib" {
 	"CRUDTest.db.data::crudTables.Rates" as "Rates";
 }
+annotations {
+   enable OData4SAP;
+}

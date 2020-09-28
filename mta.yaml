@@ -19,6 +19,26 @@ modules:
     requires:
       - name: db
       - name: hdi_db
+
+  
+
+
+  
+
+
+  
+
+
+  - name: crudView
+    type: html5
+    path: crudView
+    requires:
+     - name: core_xsjs_api
+       group: destinations
+       properties:
+          name: core_xsjs_be
+          url: ~{url}
+
 resources:
   - name: hdi_db
     properties:

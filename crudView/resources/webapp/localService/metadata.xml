@@ -1,0 +1,24 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="2.0">
+		<Schema xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices"
+			xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2008/09/edm"
+			Namespace="CRUDTest.lib">
+			<EntityType Name="RatesType">
+				<Key>
+					<PropertyRef Name="WBS_ELEMENT"/>
+					<PropertyRef Name="CONSULTANT_ID"/>
+				</Key>
+				<Property Name="WBS_ELEMENT" Type="Edm.String" Nullable="false" MaxLength="30"/>
+				<Property Name="CONSULTANT_ID" Type="Edm.Double" Nullable="false"/>
+				<Property Name="CONSULTANT_NAME" Type="Edm.String" MaxLength="100"/>
+				<Property Name="DAY_RATE" Type="Edm.Decimal" Precision="8" Scale="2"/>
+				<Property Name="COST_RATE" Type="Edm.Decimal" Precision="8" Scale="2"/>
+				<Property Name="VALID_FROM" Type="Edm.DateTime" sap:display-format="Date"/>
+				<Property Name="VALID_TO" Type="Edm.DateTime" sap:display-format="Date"/>
+			</EntityType>
+			<EntityContainer Name="v2" m:IsDefaultEntityContainer="true">
+				<EntitySet Name="Rates" EntityType="CRUDTest.lib.RatesType"/>
+			</EntityContainer>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,8 @@
+{
+	"welcomeFile": "index.html",
+	"authenticationMethod": "none",
+	"routes": [{
+		"source": "/xsodata/CRUD.xsodata/",
+		"destination": "core_xsjs_be"
+	}]
+}

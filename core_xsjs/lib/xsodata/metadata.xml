@@ -1,0 +1,6 @@
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="CRUDModel" sap:schema-version="1" xmlns="http://docs.oasis-open.org/odata/ns/edm"></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
