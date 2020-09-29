@@ -1,0 +1,36 @@
+PROCEDURE "CRUDTest.db.data::onRatesCreate" (
+	IN iNew "CRUDTest.db.data::crudTables.Rates",
+	OUT oError "CRUDTest.db.data::tt_error" )
+	LANGUAGE SQLSCRIPT
+	SQL SECURITY INVOKER AS
+BEGIN
+	
+	DECLARE tempID string;
+	DECLARE vWBS nvarchar(30);
+	DECLARE vCID double;
+	DECLARE vCNM nvarchar(100);
+	DECLARE vDRT decimal(8,2);
+	DECLARE vCRT decimal(8,2);
+	DECLARE vFRM date;
+	
+	SELECT WBS_ELEMENT INTO tempID FROM :iNew;
+	
+	IF :tempID = '' THEN
+	
+		oError = SELECT 500 AS http_status_code, 
+            		'Invalid ID' AS error_message, 
+                	'ID field can not be empty' AS detail
+                	FROM "CRUDTest.db.data::DUMMY";
+    ELSE
+        
+        SELECT WBS_ELEMENT, CONSULTANT_ID, CONSULTANT_NAME,
+        		DAY_RATE, COST_RATE, VALID_FROM
+        	INTO vWBS, vCID, vCNM, vDRT, vCRT, vFRM
+        	FROM :iNew;
+        
+        INSERT INTO "CRUDTest.db.data::crudTables.Rates"
+          VALUES (vWBS, vCID, vCNM, vDRT, vCRT, vFRM, '9999-12-31');
+    
+    END IF;
+    
+END
